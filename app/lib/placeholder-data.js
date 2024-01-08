@@ -45,3 +45,78 @@ export const categories = [
     categoryImage: "https://picsum.photos/200/300",
   },
 ];
+
+export const campaigns = [
+  {
+    id: 1,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 2,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 3,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 4,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 5,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 6,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 7,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 8,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 9,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 10,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 11,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+  {
+    id: 12,
+    campaignName: "Bazı Kampanya İsmi 1",
+    campaignImage: "https://picsum.photos/1280/1143",
+    campaignLink: "#",
+  },
+];

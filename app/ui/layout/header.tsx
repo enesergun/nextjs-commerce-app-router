@@ -5,7 +5,7 @@ import MobileMenu from "./mobile-menu";
 
 export default function Header() {
   return (
-    <nav className="fixed w-full flex items-center justify-between p-4 lg:px-6">
+    <nav className="fixed w-full flex items-center justify-between p-4 lg:px-6 bg-white z-20">
       {/* mobile-icon */}
       <div className="sm:hidden">
         <MobileMenu />

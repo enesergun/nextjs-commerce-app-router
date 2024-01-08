@@ -27,11 +27,58 @@ body {
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+  @media (min-width: 640px) {
+    display: flex;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: black !important;
+  background: white;
+  padding: 20px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 25px !important;
+}
+.swiper-button-prev {
+  left: 25px !important;
+}
+.swiper-button-next {
+  right: 25px !important;
+}
+/* @media (min-width: 640px) { ... } */

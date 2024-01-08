@@ -12,7 +12,9 @@ export default function CategoryCart({ data }: { data: CATEGORY_NAMES }) {
         alt={data.categoryName}
         className="w-16 h-16 rounded-full"
       />
-      <p className="text-[11px] mt-2 md:text-base line-clamp-1	">{data.categoryName}</p>
+      <p className="text-[11px] mt-2 md:text-base line-clamp-1	">
+        {data.categoryName}
+      </p>
     </div>
   );
 }
