@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { lato } from "@/app/ui/fonts";
 import "./globals.css";
 import Header from "@/app/ui/layout/header";
 import Footer from "@/app/ui/layout/footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Anasayfa",
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <Header />
         {children}
         <Footer />
