@@ -60,9 +60,9 @@ body {
 }
 .swiper-button-prev,
 .swiper-button-next {
-  display: none;
+  display: none !important;
   @media (min-width: 640px) {
-    display: flex;
+    display: flex !important;
   }
 }
 .swiper-button-prev,
@@ -81,4 +81,3 @@ body {
 .swiper-button-next {
   right: 25px !important;
 }
-/* @media (min-width: 640px) { ... } */
