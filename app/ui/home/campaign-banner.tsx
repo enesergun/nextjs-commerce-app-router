@@ -23,10 +23,10 @@ export default function CampaignBanner() {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
+        /* autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }}
+        }} */
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
@@ -35,11 +35,18 @@ export default function CampaignBanner() {
           <SwiperSlide key={campaign.id}>
             <Link href={campaign.campaignLink} className="w-full h-full">
               <Image
-                src={campaign.campaignImage}
+                src={campaign.campaignDesktopImage}
                 width={1280}
                 height={550}
                 alt={campaign.campaignName}
-                className="rounded-2xl"
+                className="hidden lg:block rounded-2xl"
+              />
+              <Image
+                src={campaign.campaignMobileImage}
+                width={1280}
+                height={550}
+                alt={campaign.campaignName}
+                className="lg:hidden rounded-2xl"
               />
             </Link>
           </SwiperSlide>

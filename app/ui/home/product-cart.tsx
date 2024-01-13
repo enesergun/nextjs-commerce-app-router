@@ -7,7 +7,7 @@ interface Props {
 }
 export default function ProductCart({ type, image, altText }: Readonly<Props>) {
   return (
-    <div>
+    <div className="h-full">
       <Image
         src={image}
         width={611}

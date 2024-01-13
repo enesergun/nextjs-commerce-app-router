@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 
-function ProductCard() {
+function BasketElement() {
   return (
     <div className="flex justify-between pt-5">
       <Image
@@ -33,10 +33,10 @@ function BasketContent() {
     <div className="mt-3">
       <h1 className="text-xl">My Cart</h1>
       <div className="mt-4 flex flex-col gap-10 divide-y">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <BasketElement />
+        <BasketElement />
+        <BasketElement />
+        <BasketElement />
       </div>
       <div className="mt-5 border-t py-4 ">
         <div className="flex justify-between">
