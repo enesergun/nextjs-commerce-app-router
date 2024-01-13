@@ -13,10 +13,10 @@ function TripleCollections() {
         />
       </div>
       <div className="">
-        <ProductCart image="/laptop.png" altText="image 2" />
+        <ProductCart image="/products/laptop.png" altText="image 2" />
       </div>
       <div className="md:col-start-2">
-        <ProductCart image="/headphone.png" altText="image 3" />
+        <ProductCart image="/products/headphone.png" altText="image 3" />
       </div>
     </div>
   );

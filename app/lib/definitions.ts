@@ -1,8 +1,8 @@
 export type CATEGORY_NAMES = {
-  id: number;
-  categoryName: string;
-  categoryImage: string;
-  categoryLink: string;
+  category_id: string;
+  category_name: string;
+  category_image: string;
+  category_link: string;
 };
 export type CAMPAING_ELEMENT = {
   id: number;

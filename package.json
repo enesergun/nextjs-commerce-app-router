@@ -8,11 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write --ignore-unknown .",
-    "prettier:check": "prettier --check --ignore-unknown ."
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@vercel/postgres": "^0.5.1",
     "clsx": "^2.1.0",
+    "dotenv": "^16.3.1",
     "next": "14.0.4",
     "prettier": "^3.1.1",
     "react": "^18",
