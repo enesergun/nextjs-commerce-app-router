@@ -1,10 +1,11 @@
 // Loading animation
 const shimmer =
-  "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
+  "before:content-'' before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer_2s_infinite before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
+
 export function CategorySkeleton() {
   return (
     <div
-      className={`${shimmer} relative overflow-hidden w-16 min-w-16 md:w-24 flex flex-col justify-center items-center bg-gray-100 p-2 shadow-sm rounded-xl`}
+      className={`relative overflow-hidden w-16 min-w-16 md:w-24 flex flex-col justify-center items-center p-2 rounded-xl ${shimmer}`}
     >
       <div className="w-16 h-16 rounded-full bg-gray-200" />
       <div className="mt-2 w-24 h-4 bg-gray-200 rounded-md" />
@@ -24,6 +25,14 @@ export function CategoriesSkeleton() {
       <CategorySkeleton />
       <CategorySkeleton />
       <CategorySkeleton />
+    </div>
+  );
+}
+
+export function CampaignBannerSkeleton() {
+  return (
+    <div className="loading-skeleton p-4 lg:px-6 max-w-screen-xl mx-auto h-[550px] bg-gray-200 rounded-2xl">
+      <div className=" w-full h-full rounded-2xl animate-pulse" />
     </div>
   );
 }

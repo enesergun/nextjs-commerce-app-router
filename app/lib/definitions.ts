@@ -5,9 +5,9 @@ export type CATEGORY_NAMES = {
   category_link: string;
 };
 export type CAMPAING_ELEMENT = {
-  id: number;
-  campaignName: string;
-  campaignDesktopImage: string;
-  campaignMobileImage: string;
-  campaignLink: string;
+  campaign_id: string;
+  campaign_name: string;
+  campaign_desktop_image: string;
+  campaign_mobile_image: string;
+  campaign_link: string;
 };

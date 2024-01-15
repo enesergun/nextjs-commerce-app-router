@@ -57,24 +57,24 @@ export const categories = [
 
 export const campaigns = [
   {
-    id: 1,
-    campaignName: "Bazı Kampanya İsmi 1",
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Yeni Duyurular",
     campaignDesktopImage: "/campaigns/campaign-1.jpeg",
     campaignMobileImage: "/campaigns/campaign-1.jpeg",
-    campaignLink: "#",
+    campaignLink: "/kampanyalar/yeni-duyurular",
   },
   {
-    id: 2,
-    campaignName: "Bazı Kampanya İsmi 1",
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Flaş İndirimler Burada",
     campaignDesktopImage: "/campaigns/campaign-2.png",
     campaignMobileImage: "/campaigns/campaign-2.png",
-    campaignLink: "#",
+    campaignLink: "/kampanyalar/flas-indirimler",
   },
   {
-    id: 3,
-    campaignName: "Bazı Kampanya İsmi 1",
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Yüzde 30'a varan indirimler!",
     campaignDesktopImage: "/campaigns/campaign-3.png",
     campaignMobileImage: "/campaigns/campaign-3.png",
-    campaignLink: "#",
+    campaignLink: "/kampanyalar/yuzde-30-a-varan-indirimler",
   },
 ];

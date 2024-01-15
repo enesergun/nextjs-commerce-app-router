@@ -13,39 +13,38 @@ import "@/app/globals.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-import { campaigns } from "@/app/lib/placeholder-data";
 import type { CAMPAING_ELEMENT } from "@/app/lib/definitions";
 import Link from "next/link";
 
-export default function CampaignBanner() {
+export default function CampaignBanner({ data }: { data: CAMPAING_ELEMENT[] }) {
   return (
     <div className="p-4 lg:px-6 max-w-screen-xl mx-auto h-[550px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        /* autoplay={{
+        autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }} */
+        }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {campaigns.map((campaign: CAMPAING_ELEMENT) => (
-          <SwiperSlide key={campaign.id}>
-            <Link href={campaign.campaignLink} className="w-full h-full">
+        {data.map((campaign: CAMPAING_ELEMENT) => (
+          <SwiperSlide key={campaign.campaign_id}>
+            <Link href={campaign.campaign_link} className="w-full h-full">
               <Image
-                src={campaign.campaignDesktopImage}
+                src={campaign.campaign_desktop_image}
                 width={1280}
                 height={550}
-                alt={campaign.campaignName}
+                alt={campaign.campaign_name}
                 className="hidden lg:block rounded-2xl"
               />
               <Image
-                src={campaign.campaignMobileImage}
+                src={campaign.campaign_mobile_image}
                 width={1280}
                 height={550}
-                alt={campaign.campaignName}
+                alt={campaign.campaign_name}
                 className="lg:hidden rounded-2xl"
               />
             </Link>

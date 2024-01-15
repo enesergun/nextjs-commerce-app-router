@@ -56,6 +56,29 @@ const categories = [
     categoryLink: "/mutfak",
   },
 ];
+const campaigns = [
+  {
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Yeni Duyurular",
+    campaignDesktopImage: "/campaigns/campaign-1.jpeg",
+    campaignMobileImage: "/campaigns/campaign-1.jpeg",
+    campaignLink: "/kampanyalar/yeni-duyurular",
+  },
+  {
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Flaş İndirimler Burada",
+    campaignDesktopImage: "/campaigns/campaign-2.png",
+    campaignMobileImage: "/campaigns/campaign-2.png",
+    campaignLink: "/kampanyalar/flas-indirimler",
+  },
+  {
+    id: "24717c5e-8d79-48db-b6a5-64e2ccfc9439",
+    campaignName: "Yüzde 30'a varan indirimler!",
+    campaignDesktopImage: "/campaigns/campaign-3.png",
+    campaignMobileImage: "/campaigns/campaign-3.png",
+    campaignLink: "/kampanyalar/yuzde-30-a-varan-indirimler",
+  },
+];
 
 async function seedCategories(client) {
   try {
@@ -103,10 +126,44 @@ async function dropInvoicesTable(client) {
     throw error;
   }
 }
+async function seedCampaigns(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    // create the "categories" table if it doesn't exist
+    const createTable = await client.sql`
+    CREATE TABLE IF NOT EXISTS campaigns (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    campaign_id UUID NOT NULL,
+    campaign_name VARCHAR(255) NOT NULL,
+    campaign_desktop_image VARCHAR(255) NOT NULL,
+    campaign_mobile_image VARCHAR(255) NOT NULL,
+    campaign_link VARCHAR(255) NOT NULL
+    )
+    `;
+    // insert data into the "categories" table
+
+    const insertedCampaigns = await Promise.all(
+      campaigns.map(
+        (campaign) => client.sql`
+            INSERT INTO campaigns (campaign_id, campaign_name, campaign_desktop_image, campaign_mobile_image, campaign_link)
+            VALUES (${campaign.id}, ${campaign.campaignName}, ${campaign.campaignDesktopImage}, ${campaign.campaignMobileImage}, ${campaign.campaignLink})
+            ON CONFLICT (id) DO NOTHING;
+            `,
+      ),
+    );
+    return {
+      createTable,
+      campaigns: insertedCampaigns,
+    };
+  } catch (error) {
+    console.error("Error seeding categories", error);
+    throw error;
+  }
+}
 
 async function main() {
   const client = await db.connect();
-  await seedCategories(client);
+  await seedCampaigns(client);
   /* await dropInvoicesTable(client); */
 
   await client.end();
