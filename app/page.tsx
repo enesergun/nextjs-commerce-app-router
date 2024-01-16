@@ -14,7 +14,9 @@ export default function Home() {
         <CampaignList />
       </Suspense>
       <SectionTitle title="Koleksiyonlar" />
-      <Collections />
+      <Suspense fallback={<div>loading</div>}>
+        <Collections />
+      </Suspense>
     </main>
   );
 }

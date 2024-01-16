@@ -11,3 +11,14 @@ export type CAMPAING_ELEMENT = {
   campaign_mobile_image: string;
   campaign_link: string;
 };
+export type PRODUCT = {
+  id: string;
+  category: string;
+  name: string;
+  description: string;
+  isTripleBig: boolean;
+  isTripleSmall: boolean;
+  isQuadrant: boolean;
+  price: string;
+  image: string;
+}
