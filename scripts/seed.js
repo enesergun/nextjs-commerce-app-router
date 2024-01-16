@@ -191,8 +191,8 @@ async function seedCategories(client) {
             INSERT INTO categories (category_id, category_name, category_image, category_link)
             VALUES (${category.categoryId}, ${category.categoryName}, ${category.categoryImage}, ${category.categoryLink})
             ON CONFLICT (id) DO NOTHING;
-            `
-      )
+            `,
+      ),
     );
     return {
       createTable,
@@ -238,8 +238,8 @@ async function seedCampaigns(client) {
             INSERT INTO campaigns (campaign_id, campaign_name, campaign_desktop_image, campaign_mobile_image, campaign_link)
             VALUES (${campaign.id}, ${campaign.campaignName}, ${campaign.campaignDesktopImage}, ${campaign.campaignMobileImage}, ${campaign.campaignLink})
             ON CONFLICT (id) DO NOTHING;
-            `
-      )
+            `,
+      ),
     );
     return {
       createTable,
@@ -274,8 +274,8 @@ async function seedProducts(client) {
             INSERT INTO products (id, category, name, description, price, isTripleBig, isTripleSmall, isQuadrant, image)
             VALUES (${product.id}, ${product.category}, ${product.name}, ${product.description}, ${product.price}, ${product.isTripleBig}, ${product.isTripleSmall}, ${product.isQuadrant}, ${product.image})
             ON CONFLICT (id) DO NOTHING;
-            `
-      )
+            `,
+      ),
     );
 
     return {
@@ -299,6 +299,6 @@ async function main() {
 main().catch((err) => {
   console.error(
     "An error occurred while attempting to seed the database:",
-    err
+    err,
   );
 });

@@ -21,4 +21,4 @@ export type PRODUCT = {
   isQuadrant: boolean;
   price: string;
   image: string;
-}
+};

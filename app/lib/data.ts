@@ -25,18 +25,21 @@ FROM campaigns;
 }
 export async function fetchProductCollections() {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
     const products = await sql`
       SELECT *
       FROM products
       WHERE isTripleBig = true OR isTripleSmall = true OR isQuadrant = true;
     `;
 
-
-
-    const tripleBigProducts = products.rows.filter((product) => product.istriplebig);
-    const tripleSmallProducts = products.rows.filter((product) => product.istriplesmall);
-    const quadrantProducts = products.rows.filter((product) => product.isquadrant);
+    const tripleBigProducts = products.rows.filter(
+      (product) => product.istriplebig,
+    );
+    const tripleSmallProducts = products.rows.filter(
+      (product) => product.istriplesmall,
+    );
+    const quadrantProducts = products.rows.filter(
+      (product) => product.isquadrant,
+    );
 
     const result = {
       tripleBigProduct: tripleBigProducts as PRODUCT[],
@@ -50,4 +53,3 @@ export async function fetchProductCollections() {
     throw new Error("Failed to fetch product collections");
   }
 }
-
