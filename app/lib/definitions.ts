@@ -6,10 +6,14 @@ export type CATEGORY_NAMES = {
 };
 export type CAMPAING_ELEMENT = {
   campaign_id: string;
+  campaign_slug: string;
+  campaign_description: string;
   campaign_name: string;
   campaign_desktop_image: string;
   campaign_mobile_image: string;
   campaign_link: string;
+  campaign_start_date: Date;
+  campaign_end_date: Date;
 };
 export type PRODUCT = {
   id: string;

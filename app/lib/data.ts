@@ -14,7 +14,7 @@ export async function fetchCategories() {
 export async function fetchCampaignBanners() {
   try {
     const campaigns = await sql<CAMPAING_ELEMENT>`
-    SELECT campaign_link, campaign_id, campaign_desktop_image, campaign_mobile_image, campaign_name
+    SELECT campaign_link, campaign_id, campaign_desktop_image, campaign_mobile_image
 FROM campaigns;
 `;
     return campaigns.rows;
@@ -51,5 +51,20 @@ export async function fetchProductCollections() {
   } catch (error) {
     console.error("Database Error", error);
     throw new Error("Failed to fetch product collections");
+  }
+}
+
+export async function fetchSingleCampaign({ slug }: { slug: string }) {
+  try {
+    const campaign = await sql<CAMPAING_ELEMENT>`
+    SELECT *
+FROM campaigns
+WHERE campaign_slug = ${slug};
+    `;
+
+    return campaign.rows[0];
+  } catch (error) {
+    console.error("Database Error", error);
+    throw new Error("Failed to fetch campaign");
   }
 }

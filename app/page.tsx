@@ -10,7 +10,7 @@ import {
 import CampaignList from "./ui/home/campaign-list";
 export default function Home() {
   return (
-    <main className="pt-[82px] min-h-screen">
+    <>
       <Suspense fallback={<CategoriesSkeleton />}>
         <CategoryList />
       </Suspense>
@@ -21,6 +21,6 @@ export default function Home() {
       <Suspense fallback={<CollectionSkeleton />}>
         <Collections />
       </Suspense>
-    </main>
+    </>
   );
 }
