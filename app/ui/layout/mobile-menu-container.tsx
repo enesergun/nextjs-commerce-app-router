@@ -5,5 +5,5 @@ import { fetchCategories } from "@/app/lib/data";
 export default async function MobilMenuContainer() {
   const categories = await fetchCategories();
 
-  return <MobileMenu categories={categories} />;
+  return <MobileMenu data={categories} />;
 }

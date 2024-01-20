@@ -26,3 +26,7 @@ export type PRODUCT = {
   price: string;
   image: string;
 };
+
+export interface CategoryListProps {
+  data: CATEGORY_NAMES[]
+}

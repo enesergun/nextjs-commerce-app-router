@@ -1,27 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import Link from "next/link";
-import { CATEGORY_NAMES } from "@/app/lib/definitions";
+import { CategoryListProps } from "@/app/lib/definitions";
 
-function Categories({ categories }: { categories: CATEGORY_NAMES[] }) {
+const Categories: FC<CategoryListProps> = ({ data }) => {
   return (
     <div className="mt-14 flex flex-col gap-3">
-      {categories?.map((category) => (
-        <div key={category.category_id} className="text-lg	font-medium">
-          <Link href={category.category_link}>{category.category_name}</Link>
+      {data?.map((data) => (
+        <div key={data.category_id} className="text-lg	font-medium">
+          <Link href={data.category_link}>{data.category_name}</Link>
         </div>
       ))}
     </div>
   );
-}
+};
 
-export default function MobileMenu({
-  categories,
-}: {
-  categories: CATEGORY_NAMES[];
-}) {
+export default function MobileMenu({ data }: Readonly<CategoryListProps>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenHamburgerMenu = () => {
@@ -52,7 +48,7 @@ export default function MobileMenu({
         >
           <XMarkIcon className="h-4" />
         </button>
-        <Categories categories={categories} />
+        <Categories data={data} />
       </div>
     </div>
   );

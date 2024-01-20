@@ -1,4 +1,5 @@
 import React from "react";
+import Categories from "@/app/ui/search/category-wrapper";
 export default function Layout({
   params,
   children,
@@ -8,7 +9,7 @@ export default function Layout({
 }) {
   return (
     <>
-      <div>layout</div>
+      <Categories />
       {children}
     </>
   );
