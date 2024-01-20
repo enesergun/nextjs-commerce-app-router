@@ -28,5 +28,5 @@ export type PRODUCT = {
 };
 
 export interface CategoryListProps {
-  data: CATEGORY_NAMES[]
+  data: CATEGORY_NAMES[];
 }
