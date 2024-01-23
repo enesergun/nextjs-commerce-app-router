@@ -30,3 +30,8 @@ export type PRODUCT = {
 export interface CategoryListProps {
   data: CATEGORY_NAMES[];
 }
+export interface ProductProps {
+  name: PRODUCT["name"];
+  price: PRODUCT["price"];
+  image: PRODUCT["image"];
+}

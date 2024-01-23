@@ -4,8 +4,16 @@ interface Props {
   type?: "big" | "small";
   image: string;
   altText: string;
+  name: string;
+  price: string;
 }
-export default function ProductCart({ type, image, altText }: Readonly<Props>) {
+export default function ProductCart({
+  type,
+  image,
+  altText,
+  name,
+  price,
+}: Readonly<Props>) {
   return (
     <div className="h-full">
       <Image
@@ -17,8 +25,8 @@ export default function ProductCart({ type, image, altText }: Readonly<Props>) {
       />
       <div className="absolute">
         <div className="relative bottom-20 left-7 rounded-full bg-stone-300 p-3 text-sm">
-          <span className="">Name</span>
-          <span>256,89</span>
+          <span className="mr-3">{name}</span>
+          <span>₺ {price}</span>
         </div>
       </div>
     </div>

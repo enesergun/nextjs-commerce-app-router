@@ -10,7 +10,7 @@ const Categories: FC<CategoryListProps> = ({ data }) => {
     <div className="mt-14 flex flex-col gap-3">
       {data?.map((data) => (
         <div key={data.category_id} className="text-lg	font-medium">
-          <Link href={data.category_link}>{data.category_name}</Link>
+          <Link href={`/arama${data.category_link}`}>{data.category_name}</Link>
         </div>
       ))}
     </div>

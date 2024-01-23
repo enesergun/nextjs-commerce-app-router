@@ -68,3 +68,17 @@ WHERE campaign_slug = ${slug};
     throw new Error("Failed to fetch campaign");
   }
 }
+
+export async function fetchProductWithCategory(category: string) {
+  try {
+    const products = await sql<PRODUCT>`
+  SELECT id, category, name, price, image
+FROM products
+WHERE category = ${category}; 
+  `;
+    return products.rows;
+  } catch (error) {
+    console.error("Database Error", error);
+    throw new Error("Failed to fetch products by category");
+  }
+}

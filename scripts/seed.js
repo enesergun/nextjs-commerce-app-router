@@ -1,4 +1,4 @@
-const { db } = require("@vercel/postgres");
+/* const { db } = require("@vercel/postgres");
 
 const categories = [
   {
@@ -95,22 +95,48 @@ const campaigns = [
   },
 ];
 const products = [
-  /* {
+  {
     id: "7dcfb467-88c8-4ac5-9bd9-d3ce94643492",
     category: "sweatshirt",
-    name: "Ürün Adı 1",
-    description: "Bu giyim ürünü harika bir açıklamaya sahiptir.",
-    price: 49.99,
+    name: "Siyah Sweatshirt",
+    description:
+      "Şıklık ve rahatlık arayanlar için tasarlanan Siyah Basic Kapüşonlu Sweatshirt, günlük şıklığınızı tamamlayacak bir parça. Yüksek kaliteli pamuk karışımı malzemesi sayesinde, hem konforlu hem de dayanıklı bir giyim deneyimi sunar.",
+    price: 429.99,
     image: "/products/black_hoodie_mockup.png",
     isTripleBig: true,
     isTripleSmall: false,
     isQuadrant: false,
   },
   {
+    id: "c7846e76-c9fc-4725-92a1-8d4725a1da2f",
+    category: "sweatshirt",
+    name: "Beyaz Sweatshirt",
+    description:
+      "Yalın güzellik ve rahatlık arayanların favorisi olan Beyaz Rahat Kesim Sweatshirt, şıklığı basit ve zarif bir şekilde bir araya getiriyor. Yüksek kaliteli malzemesi ve konforlu tasarımı ile bu sweatshirt, günlük şıklığınızı tamamlamak için mükemmel bir seçenek.",
+    price: 629.99,
+    image: "/products/white_hoodie.png",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+  },
+  {
+    id: "83018d42-a5aa-49b9-a3d1-9e454fc0e113",
+    category: "sweatshirt",
+    name: "Baskılı Sweatshirt",
+    description:
+      "Moda ve özgünlük arayanların tercihi olan Trendy Baskılı Kapüşonlu Sweatshirt, tarzınıza renk katmak için tasarlandı. Eşsiz baskı detaylarıyla dikkat çeken bu sweatshirt, hem şık hem de dikkat çekici bir görünüm sunar.",
+    price: 829.99,
+    image: "/products/94.jpg",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+  },
+  {
     id: "3af83218-5c4c-4469-bdca-51b45fd00c82",
     category: "elektronik",
-    name: "Ürün Adı 2",
-    description: "Bu elektronik ürün harika bir açıklamaya sahiptir.",
+    name: "İş Bilgisayarı",
+    description:
+      "Güçlü performansı, dayanıklı tasarımı ve işlevselliği bir araya getiren Profesyonel İş Bilgisayarı, iş dünyasının ihtiyaçlarına uygun olarak tasarlandı. Gelişmiş özellikleri ve sağlam yapısı ile bu bilgisayar, iş süreçlerinizi daha verimli hale getirmek için ideal bir çözümdür.",
     isTripleBig: false,
     isTripleSmall: true,
     isQuadrant: false,
@@ -120,68 +146,122 @@ const products = [
   {
     id: "1ce07de3-d802-4824-afcf-62ae2a2c3e4a",
     category: "elektronik",
-    name: "Ürün Adı 4",
-    description: "Bu elektronik ürün harika bir açıklamaya sahiptir.",
+    name: "Kulaklık",
+    description:
+      "Mükemmel ses kalitesi, rahat tasarım ve kablosuz özgürlük bir araya geldi! Premium Ses Deneyimi Sunan Kablosuz Kulaklık, her müzikseverin, oyuncunun ve çağrıda bulunanın aradığı birinci sınıf ses deneyimini sunmak üzere tasarlandı.",
     isTripleBig: false,
     isTripleSmall: true,
     isQuadrant: false,
-    price: 399.99,
+    price: 4099.99,
     image: "/products/headphone.png",
   },
   {
     id: "24cb5a41-684c-4941-bec8-39fae9b136a5",
     category: "pantolon",
-    name: "Ürün Adı 3",
-    description: "Bu ayakkabı harika bir açıklamaya sahiptir.",
+    name: "Mavi Pantolon",
+    description:
+      "Her zaman modada ve her duruma uygun olan Klasik Kot Pantolon, zamanın ötesindeki tasarımı ve konforu ile öne çıkıyor. Günlük yaşamın vazgeçilmez parçası olan bu kot pantolon, şıklığı rahatlıkla bir araya getirir.",
     isTripleBig: false,
     isTripleSmall: false,
     isQuadrant: true,
-    price: 79.99,
+    price: 245.99,
     image: "/products/jean.png",
+  },
+  {
+    id: "0e3b9ca4-407d-460d-911d-9ad20cf7ff64",
+    category: "pantolon",
+    name: "Kargo Pantolon",
+    description:
+      "Modern Kargo Pantolon, pratik tasarımı ve şık görünümü ile hareket halindeki yaşam tarzınız için ideal bir seçenektir. Klasik kargo detayları ve fonksiyonellik, bu pantolonu günlük şıklığınızın bir parçası haline getirir.",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+    price: 679.99,
+    image: "/products/cargo-pant.png",
   },
   {
     id: "4c6eae9b-7ed1-4f25-8098-4392e5d2a196",
     category: "ayakkabi",
-    name: "Ürün Adı 3",
-    description: "Bu ayakkabı harika bir açıklamaya sahiptir.",
+    name: "Koşu Ayakkabısı",
+    description:
+      "Performans Serisi Koşu Ayakkabısı, koşu tutkunları için özel olarak tasarlanmış birinci sınıf bir ayakkabıdır. Üstün teknoloji ve konfor detayları ile donatılan bu ayakkabı, koşu deneyiminizi zirveye taşımak için tasarlandı.",
     isTripleBig: false,
     isTripleSmall: false,
     isQuadrant: true,
-    price: 79.99,
+    price: 760.0,
     image: "/products/shoes.png",
+  },
+  {
+    id: "65ac17d4-5e83-4a67-a194-28278d47e5c5",
+    category: "ayakkabi",
+    name: "Günlük Siyah Ayakkabı",
+    description:
+      "Sade, şık ve her duruma uygun olan Klasik Siyah Günlük Ayakkabı, gardırobunuzun vazgeçilmezi olmaya aday. Günün her anında stilinizi tamamlayacak bu ayakkabı, hem konforlu tasarımıyla hem de zarif detaylarıyla öne çıkıyor.",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+    price: 530.0,
+    image: "/products/black-shoes.jpg",
   },
   {
     id: "0c9d790d-f260-4e9a-9e1a-8a85fb6e22fa",
     category: "beyaz-esya",
-    name: "Ürün Adı 3",
-    description: "Bu ayakkabı harika bir açıklamaya sahiptir.",
+    name: "ArcticCool 500L Buzdolabı",
+    description:
+      "ArcticCool 500L No-Frost Buzdolabı, yenilikçi teknolojisi ve şık tasarımı ile evinizin kalbindeki mükemmel tamamlayıcıdır. Gıdalarınızı taze tutmanın ve depolamanın yanı sıra enerji tasarrufu ve kullanıcı dostu özellikleriyle öne çıkan bu buzdolabı, mutfak deneyiminizi bir üst seviyeye taşıyor.",
     isTripleBig: false,
     isTripleSmall: false,
     isQuadrant: true,
-    price: 79.99,
-    image: "products/fridge.png",
+    price: 24249.25,
+    image: "/products/fridge.png",
   },
   {
     id: "c1dec8d3-b693-46e0-bbcf-dd35ccb0f071",
     category: "mutfak",
-    name: "Ürün Adı 3",
-    description: "Bu ayakkabı harika bir açıklamaya sahiptir.",
+    name: "Chef'sChoice Tava",
+    description:
+      "Mutfakta ustalaşmanın anahtarı, Chef'sChoice Profesyonel Seramik Kaplama Tava ile lezzet ve pratikliğin bir araya geldiği bir deneyimdir. Yüksek kaliteli malzemeler ve özel tasarımı, bu tavayı mutfakta vazgeçilmez kılacak.",
     isTripleBig: false,
     isTripleSmall: false,
     isQuadrant: true,
-    price: 79.99,
+    price: 120.30,
     image: "/products/pan.png",
-  }, */
+  },
   {
-    id: "3a46844a-1b1e-4c9b-a66b-cdf3bdf16987",
-    category: "beyaz-esya",
-    name: "Ürün Adı Camasir makinesi",
-    description: "Bu ayakkabı harika bir açıklamaya sahiptir.",
+    id: "49089a8a-7cde-45ea-ac21-a7e9588e2ea8",
+    category: "esofman",
+    name: "Eşofman",
+    description:
+      "Günlük aktivitelerinizde ve spor seanslarınızda tarzınızı ön plana çıkaran Rahatlık ve Stilin Buluştuğu Eşofman Takımı, konforu ve şıklığı bir araya getiriyor. Hareket özgürlüğü sunan tasarımı ile her anınıza eşlik edecek bir seçenek.",
     isTripleBig: false,
     isTripleSmall: false,
     isQuadrant: false,
-    price: 79.99,
-    image: "products/fridge.png",
+    price: 179.99,
+    image: "/products/tracksuit.png",
+  },
+  {
+    id: "fabc2fc0-23e6-4bb7-9a94-3d318b5a1702",
+    category: "telefon",
+    name: "ayPhone X",
+    description:
+      "Yüksek performans, zarif tasarım ve yenilikçi özellikleri bir araya getiren ayPhone Stellar Akıllı Telefon, dijital dünyanızı daha da aydınlatacak! Güçlü donanımı ve kullanıcı dostu arayüzü ile hayalinizdeki mobil deneyimi sunuyoruz.",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+    price: 12470.0,
+    image: "/products/phone.png",
+  },
+  {
+    id: "ff1a8906-2848-4a7e-9e1c-d51aa340512c",
+    category: "telefon",
+    name: "ayPhone Pro",
+    description:
+      "ayPhone Pro, teknoloji ve estetiğin mükemmel bir birleşimini sunan, sektördeki en son yenilikleri benimseyen bir akıllı telefon modelidir. Üst düzey özellikleri ve üstün performansıyla, kullanıcı deneyimini sınırları aşan bir seviyeye taşıyor.",
+    isTripleBig: false,
+    isTripleSmall: false,
+    isQuadrant: false,
+    price: 1579.99,
+    image: "/products/phone-two.png",
   },
 ];
 
@@ -206,8 +286,8 @@ async function seedCategories(client) {
             INSERT INTO categories (category_id, category_name, category_image, category_link)
             VALUES (${category.categoryId}, ${category.categoryName}, ${category.categoryImage}, ${category.categoryLink})
             ON CONFLICT (id) DO NOTHING;
-            `,
-      ),
+            `
+      )
     );
     return {
       createTable,
@@ -221,7 +301,7 @@ async function seedCategories(client) {
 async function dropInvoicesTable(client) {
   try {
     // Drop the "invoices" table if it exists
-    const dropTable = await client.sql`DROP TABLE IF EXISTS campaigns;`;
+    const dropTable = await client.sql`DROP TABLE IF EXISTS products;`;
 
     return {
       dropTable,
@@ -257,8 +337,8 @@ async function seedCampaigns(client) {
             INSERT INTO campaigns (campaign_id, campaign_slug, campaign_name, campaign_description, campaign_desktop_image, campaign_mobile_image, campaign_link, campaign_start_date, campaign_end_date)
             VALUES (${campaign.id}, ${campaign.campaignSlug}, ${campaign.campaignName}, ${campaign.campaignDescription}, ${campaign.campaignDesktopImage}, ${campaign.campaignMobileImage}, ${campaign.campaignLink}, ${campaign.campaignStartDate}, ${campaign.campaignEndDate})
             ON CONFLICT (id) DO NOTHING;
-            `,
-      ),
+            `
+      )
     );
     return {
       createTable,
@@ -293,8 +373,8 @@ async function seedProducts(client) {
             INSERT INTO products (id, category, name, description, price, isTripleBig, isTripleSmall, isQuadrant, image)
             VALUES (${product.id}, ${product.category}, ${product.name}, ${product.description}, ${product.price}, ${product.isTripleBig}, ${product.isTripleSmall}, ${product.isQuadrant}, ${product.image})
             ON CONFLICT (id) DO NOTHING;
-            `,
-      ),
+            `
+      )
     );
 
     return {
@@ -309,15 +389,16 @@ async function seedProducts(client) {
 
 async function main() {
   const client = await db.connect();
-  /* await seedCampaigns(client); */
-  /* await dropInvoicesTable(client); */
-  /* await seedProducts(client); */
+  await seedCampaigns(client);
+  await dropInvoicesTable(client);
+  await seedProducts(client);
 
   await client.end();
 }
 main().catch((err) => {
   console.error(
     "An error occurred while attempting to seed the database:",
-    err,
+    err
   );
 });
+ */
