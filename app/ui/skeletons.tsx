@@ -87,3 +87,26 @@ export function CollectionSkeleton() {
     </>
   );
 }
+export function ProductSkeleton() {
+  return (
+    <div className="rounded-2xl border border-neutral-300 max-w-[300px] h-[425px] animate-pulse">
+      <div className="h-[275px] bg-gray-300 rounded-2xl"></div>
+      <div className="flex flex-col p-3 gap-2.5">
+        <h3 className="bg-gray-200 text-neutral-600 font-bold w-[125px] h-[20px]"></h3>
+        <div className="w-[75px] h-[20px] bg-gray-200"></div>
+
+        <button className=" w-[251px] h-[34px] bg-gray-200 border border-neutral-300 rounded-lg p-1.5 text-sm sm:hover:bg-neutral-100"></button>
+      </div>
+    </div>
+  );
+}
+export function ProductsSkeleton() {
+  return (
+    <div className="p-4 lg:px-6 flex flex-col items-center justify-center sm:justify-start gap-6 sm:flex-row flex-wrap w-full max-w-screen-xl mx-auto">
+      <ProductSkeleton />
+      <ProductSkeleton />
+      <ProductSkeleton />
+      <ProductSkeleton />
+    </div>
+  );
+}
