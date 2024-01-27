@@ -7,10 +7,10 @@ type Props = {
 };
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const category = collectionsMetaData.find(
-    (element) => element.link === params.collection
+    (element) => element.link === params.collection,
   );
 
   return {

@@ -8,7 +8,6 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 export default function Header() {
   return (
     <nav className="fixed w-full flex items-center justify-between p-4 lg:px-6 bg-white z-20">
-      {/* mobile-icon */}
       <div className="sm:hidden">
         <Suspense
           fallback={

@@ -22,7 +22,6 @@ function BasketModal() {
       )}
 
       <div
-        /* ref={ref} */
         className={`${
           isOpen
             ? "opacity-100 translate-x-0 overflow-auto"
@@ -36,7 +35,7 @@ function BasketModal() {
         >
           <XMarkIcon className="h-4" />
         </button>
-        {/* Content of the modal */}
+
         <BasketContent />
       </div>
     </div>

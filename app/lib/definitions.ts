@@ -25,14 +25,24 @@ export type PRODUCT = {
   isQuadrant: boolean;
   price: string;
   image: string;
+  count?: any;
 };
 
 export interface CategoryListProps {
   data: CATEGORY_NAMES[];
 }
 export interface ProductProps {
-  id?: PRODUCT["id"];
+  id: PRODUCT["id"];
   name: PRODUCT["name"];
   price: PRODUCT["price"];
   image: PRODUCT["image"];
+  count: PRODUCT["count"];
+}
+export interface ShoppingCartState {
+  cart: PRODUCT[];
+  addToCart: (product: PRODUCT) => void;
+  removeFromCart: (productId: PRODUCT["id"]) => void;
+  clearCart: () => void;
+  totalPrice: number;
+  totalCount: number;
 }
