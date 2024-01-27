@@ -14,6 +14,7 @@ function TripleCollections({
     <div className="grid gap-y-2.5 p-4 lg:px-6 max-w-screen-xl mx-auto md:grid-cols-2 md:gap-x-2.5">
       <div className="md:row-start-1 md:row-end-3">
         <ProductCart
+          id={firstProduct.id}
           type="big"
           image={firstProduct.image}
           altText={firstProduct.name}
@@ -23,6 +24,7 @@ function TripleCollections({
       </div>
       <div>
         <ProductCart
+          id={otherProducts[0].id}
           image={otherProducts[0].image}
           altText={otherProducts[0].name}
           name={otherProducts[0].name}
@@ -31,6 +33,7 @@ function TripleCollections({
       </div>
       <div className="md:col-start-2">
         <ProductCart
+          id={otherProducts[1].id}
           image={otherProducts[1].image}
           altText={otherProducts[1].name}
           name={otherProducts[1].name}
@@ -46,6 +49,7 @@ function QuaternaryCollections({ products }: { products: PRODUCT[] }) {
       {products.map((product) => (
         <div key={product.id}>
           <ProductCart
+            id={product.id}
             image={product.image}
             altText={product.name}
             name={product.name}

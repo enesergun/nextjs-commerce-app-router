@@ -82,3 +82,15 @@ WHERE category = ${category};
     throw new Error("Failed to fetch products by category");
   }
 }
+export async function fetchProductDetail(id: string) {
+  try {
+    const product = await sql<PRODUCT>`
+    SELECT * FROM products WHERE id = ${id};
+`;
+
+    return product.rows[0];
+  } catch (error) {
+    console.error("Database Error", error);
+    throw new Error("Failed to fetch product");
+  }
+}

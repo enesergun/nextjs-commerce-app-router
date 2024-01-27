@@ -36,7 +36,11 @@ export interface ProductProps {
   name: PRODUCT["name"];
   price: PRODUCT["price"];
   image: PRODUCT["image"];
-  count: PRODUCT["count"];
+  count?: PRODUCT["count"];
+  description?: PRODUCT["description"];
+}
+export interface ProductDetailProps {
+  data: ProductProps;
 }
 export interface ShoppingCartState {
   cart: PRODUCT[];
