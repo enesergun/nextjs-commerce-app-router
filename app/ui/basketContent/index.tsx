@@ -3,6 +3,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import useShoppingCart from "@/app/store";
 import Link from "next/link";
 import BasketElement from "./basket-element";
+import Button from "@/app/ui/elements/button";
 
 function BasketContent() {
   const { cart, totalCount, totalPrice } = useShoppingCart();
@@ -36,9 +37,7 @@ function BasketContent() {
               <span>₺ {totalPrice}</span>
             </div>
             <Link href="/sepet">
-              <button className="w-full mt-4 bg-sky-400 text-white p-3 rounded-2xl">
-                Sepete Git
-              </button>
+              <Button text="Sepete Git" />
             </Link>
           </div>
         </>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ProductDetailProps } from "@/app/lib/definitions";
 import { addToCartFnc } from "@/app/utils/addToCart";
 import useShoppingCart from "@/app/store";
+import Button from "@/app/ui/elements/button";
 export default function ProductContent({ data }: Readonly<ProductDetailProps>) {
   const { addToCart } = useShoppingCart();
   return (
@@ -24,8 +25,8 @@ export default function ProductContent({ data }: Readonly<ProductDetailProps>) {
         <div className="p-3 bg-blue-200 w-max rounded-xl">₺ {data?.price}</div>
         <article className="border-y py-5 ">{data?.description}</article>
         <div>
-          <button
-            className="w-full mt-4 bg-sky-400 text-white p-3 rounded-2xl"
+          <Button
+            text="Sepete Ekle"
             onClick={() =>
               addToCartFnc(
                 {
@@ -37,9 +38,7 @@ export default function ProductContent({ data }: Readonly<ProductDetailProps>) {
                 addToCart,
               )
             }
-          >
-            Sepete Ekle
-          </button>
+          />
         </div>
       </div>
     </>

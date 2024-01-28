@@ -33,7 +33,7 @@ function Breadcrumbs({ data }: Readonly<BreadcrumbsProps>) {
               >
                 {element.name}
               </span>
-              {index !== data.length - 1 && <span>{">"}</span>}
+              {index !== data.length - 1 && <span>{" >"}</span>}
             </Link>
           </li>
         ))}
