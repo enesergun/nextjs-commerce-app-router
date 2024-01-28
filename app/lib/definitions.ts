@@ -38,6 +38,7 @@ export interface ProductProps {
   image: PRODUCT["image"];
   count?: PRODUCT["count"];
   description?: PRODUCT["description"];
+  theme?: "light" | "dark";
 }
 export interface ProductDetailProps {
   data: ProductProps;

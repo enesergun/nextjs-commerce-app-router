@@ -56,3 +56,20 @@ export const collectionsMetaData = [
     link: "mutfak",
   },
 ];
+export const basketBreadcrumbs = [
+  {
+    id: 1,
+    name: "İletişim",
+    link: "/sepet",
+  },
+  {
+    id: 2,
+    name: "Kargo",
+    link: "/sepet/kargo",
+  },
+  {
+    id: 3,
+    name: "Ödeme",
+    link: "/sepet/odeme",
+  },
+];
