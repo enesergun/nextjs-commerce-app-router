@@ -6,9 +6,7 @@ const FormSchema = z.object({
   phone: z.number(),
 });
 
-export async function basketInformationFnc(prevState: any, formData: FormData) {
-  console.log("something");
-
+export async function basketInformationFnc(data: any) {
   // Validate form using Zod
   /* const validatedFields = basketInformation.safeParse({
     email: formData.get("email"),
@@ -20,7 +18,7 @@ export async function basketInformationFnc(prevState: any, formData: FormData) {
       message: "Missing Fields. Failed to Create Invoice.",
     };
   } */
-  console.log("no problema");
+
   try {
     await console.log("everthing is fine");
   } catch (error) {
