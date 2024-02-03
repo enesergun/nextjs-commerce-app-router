@@ -63,3 +63,9 @@ export interface InformationProps {
   address: string;
   addressType: string;
 }
+export interface RadioCardProps {
+  value: string;
+  header: number | string;
+  title: string;
+  description: string;
+}
