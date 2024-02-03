@@ -1,17 +1,24 @@
-import React, { FormEvent } from "react";
+import React from "react";
 import Input from "@/app/ui/elements/input";
 import Button from "@/app/ui/elements/button";
-import { State } from "@/app/lib/actions";
+import { State, InformationProps } from "@/app/lib/definitions";
+import useShoppingCart from "@/app/store";
 interface BasketFormProps {
-  handleSubmit: any;
+  handleSubmit: (payload: FormData) => void;
   state: State | undefined;
+  initialData: InformationProps;
 }
 
-export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
+export default function BasketForm({
+  handleSubmit,
+  state,
+  initialData,
+}: BasketFormProps) {
+  const { totalCount } = useShoppingCart();
   return (
     <form action={handleSubmit}>
       <div>
-        <h1 className="text-xl sm:text-2xl font-bold text-cyan-950 mb-2 sm:mb-0">
+        <h1 className="text-xl sm:text-2xl font-bold text-cyan-950 mb-4 ">
           İletişim
         </h1>
         <fieldset className="flex flex-col gap-4">
@@ -19,6 +26,7 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
             id="email"
             name="email"
             placeholder="E-mail"
+            value={initialData?.email}
             inputType="email"
             ariaDescribedby="email-error"
             error={state?.errors?.email}
@@ -26,6 +34,7 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
           <Input
             id="phone"
             name="phone"
+            value={initialData?.phone}
             placeholder="Telefon Numarası"
             inputType="tel"
             error={state?.errors?.phone}
@@ -33,19 +42,21 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
         </fieldset>
       </div>
       <div className="mt-3">
-        <h1 className="text-xl sm:text-2xl font-bold text-cyan-950 mb-2 sm:mb-0">
+        <h1 className="text-xl sm:text-2xl font-bold text-cyan-950 mb-4">
           Kargo Adresi
         </h1>
         <fieldset className="flex flex-col gap-4">
           <Input
-            id="addresType"
+            id="addressType"
             name="addressType"
+            value={initialData?.addressType}
             placeholder="Adres Tipi"
             inputType="text"
           />
           <Input
             id="name"
             name="name"
+            value={initialData?.name}
             placeholder="Ad"
             inputType="text"
             ariaDescribedby="name-error"
@@ -54,6 +65,7 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
           <Input
             id="surname"
             name="surname"
+            value={initialData?.surname}
             placeholder="Soyad"
             inputType="text"
             ariaDescribedby="surname-error"
@@ -62,6 +74,7 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
           <Input
             id="address"
             name="address"
+            value={initialData?.address}
             placeholder="Adres"
             inputType="text"
             ariaDescribedby="adress-error"
@@ -69,7 +82,7 @@ export default function BasketForm({ handleSubmit, state }: BasketFormProps) {
           />
         </fieldset>
       </div>
-      <Button text="Devam Et" type="submit" />
+      <Button text="Devam Et" type="submit" disabled={totalCount === 0} />
     </form>
   );
 }

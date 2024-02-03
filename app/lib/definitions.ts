@@ -51,3 +51,15 @@ export interface ShoppingCartState {
   totalPrice: number;
   totalCount: number;
 }
+export type State = {
+  errors?: any;
+  message?: any;
+};
+export interface InformationProps {
+  email: string;
+  phone: string;
+  name: string;
+  surname: string;
+  address: string;
+  addressType: string;
+}

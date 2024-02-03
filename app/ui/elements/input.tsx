@@ -3,15 +3,17 @@ import clsx from "clsx";
 interface InputProps {
   id: string;
   name: string;
+  value?: string;
   placeholder: string;
   inputType: "text" | "tel" | "email";
   ariaDescribedby?: string;
-  error?: any;
+  error?: string;
 }
 
 export default function Input({
   id,
   name,
+  value,
   placeholder,
   inputType,
   ariaDescribedby,
@@ -29,6 +31,7 @@ export default function Input({
           error && "border-red-500",
         )}
         placeholder=" "
+        defaultValue={value}
         type={inputType}
         aria-describedby={ariaDescribedby}
       />

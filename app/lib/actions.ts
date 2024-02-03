@@ -3,6 +3,8 @@ import { z } from "zod";
 import { unstable_noStore as noStore } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { State } from "@/app/lib/definitions";
+
 const basketValidation = z
   .object({
     email: z.coerce
@@ -26,19 +28,18 @@ const basketValidation = z
     address: z.string().min(1, "Adres Alanı Zorunludur"),
   })
   .required();
-export type State = {
-  errors?: any;
-  message?: any;
-};
-export async function basketInformationFnc(prevSate: any, data: FormData) {
-  console.log("DATA", data);
-  const cookieStore = cookies();
+
+export async function basketInformationFnc(
+  prevSate: Awaited<State>,
+  data: FormData,
+) {
   const inputObject = {
     email: data.get("email"),
     phone: data.get("phone"),
     name: data.get("name"),
     surname: data.get("surname"),
     address: data.get("address"),
+    addressType: data.get("addressType"),
   };
   noStore();
   // Validate form using Zod
@@ -52,11 +53,20 @@ export async function basketInformationFnc(prevSate: any, data: FormData) {
   }
 
   try {
-    cookieStore.set("testCookie", JSON.stringify(inputObject));
+    const cookieStore = cookies();
+    cookieStore.set("basket_information", JSON.stringify(inputObject));
   } catch (error) {
     return {
       message: "Database Error: Failed to Create Invoice.",
     };
   }
   redirect("/sepet/kargo");
+}
+export async function getExistData() {
+  const cookieStore = cookies();
+  const existData = cookieStore.get("basket_information");
+
+  try {
+    if (existData) return JSON.parse(existData.value);
+  } catch (error) {}
 }
