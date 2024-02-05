@@ -1,12 +1,12 @@
 import React from "react";
-import ShippingToInfo from "./shipping-info";
-import ShippingMethod from "./shipping-method";
+import ShippingToInfo from "@/app/ui/checkout/shipping/shipping-info";
 import { getExistData } from "@/app/lib/actions";
-
-async function Shipping() {
+import PaymentSummary from "./payment-summary";
+export default async function PaymentApprovement() {
   const basketInformation = await getExistData("basket_information");
+  const shippingMethod = await getExistData("shipping_method");
 
-  const data = [
+  const infoData = [
     {
       id: 1,
       title: "Email",
@@ -19,13 +19,17 @@ async function Shipping() {
       value: basketInformation?.address,
       changeLink: "/sepet",
     },
+    {
+      id: 3,
+      title: "Kargo",
+      value: shippingMethod?.method,
+      changeLink: "/sepet/kargo",
+    },
   ];
   return (
     <div className="p-4 lg:px-6 max-w-screen-xl mx-auto sm:w-full">
-      <ShippingToInfo data={data} />
-      <ShippingMethod />
+      <ShippingToInfo data={infoData} />
+      <PaymentSummary shippingMethod={shippingMethod?.method} />
     </div>
   );
 }
-
-export default Shipping;

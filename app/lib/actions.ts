@@ -57,16 +57,30 @@ export async function basketInformationFnc(
     cookieStore.set("basket_information", JSON.stringify(inputObject));
   } catch (error) {
     return {
-      message: "Database Error: Failed to Create Invoice.",
+      message: "Error: Something went wrong.",
     };
   }
   redirect("/sepet/kargo");
 }
-export async function getExistData() {
+export async function getExistData(keyName: string) {
   const cookieStore = cookies();
-  const existData = cookieStore.get("basket_information");
+  const existData = cookieStore.get(keyName);
 
   try {
     if (existData) return JSON.parse(existData.value);
   } catch (error) {}
+}
+export async function submitShipping(data: FormData) {
+  try {
+    const cookieStore = cookies();
+    cookieStore.set(
+      "shipping_method",
+      JSON.stringify({ method: data.get("choice") }),
+    );
+  } catch (error) {
+    return {
+      message: "Error: Something went wrong.",
+    };
+  }
+  redirect("/sepet/odeme");
 }

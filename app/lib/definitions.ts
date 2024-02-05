@@ -68,4 +68,11 @@ export interface RadioCardProps {
   header: number | string;
   title: string;
   description: string;
+  checked?: boolean | undefined;
+}
+export interface ShippingToInfoProps {
+  id: number;
+  title: string;
+  value: string;
+  changeLink: string;
 }

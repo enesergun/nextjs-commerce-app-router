@@ -6,6 +6,7 @@ export default function RadioCard({
   header,
   title,
   description,
+  checked,
 }: RadioCardProps) {
   return (
     <div>
@@ -15,6 +16,7 @@ export default function RadioCard({
         type="radio"
         name="choice"
         value={value}
+        defaultChecked={checked}
       />
       <label
         className="flex flex-col p-4 border-2 rounded-lg  cursor-pointer peer-checked:border-cyan-700"

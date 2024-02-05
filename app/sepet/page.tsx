@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Siparişinizi hemen tamamlayın hemen teslim edelim!",
 };
 export default async function Page() {
-  const existInformationData = await getExistData();
+  const existInformationData = await getExistData("basket_information");
 
   return <Information data={existInformationData} />;
 }
