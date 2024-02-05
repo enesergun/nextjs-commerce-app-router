@@ -1,5 +1,5 @@
 export async function completePayment(router: any, clearCart: () => void) {
-  const response = await fetch("http://localhost:3000/api/sepet", {
+  const response = await fetch("/api/sepet", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
