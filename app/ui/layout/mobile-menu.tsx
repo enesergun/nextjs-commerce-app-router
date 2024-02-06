@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, FC } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CategoryListProps } from "@/app/lib/definitions";
 
@@ -19,10 +19,14 @@ const Categories: FC<CategoryListProps> = ({ data }) => {
 
 export default function MobileMenu({ data }: Readonly<CategoryListProps>) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleOpenHamburgerMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <div className="sm:hidden">

@@ -1,12 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import OpenBasket from "./open-basket";
 import BasketContent from "@/app/ui/basketContent";
+import { usePathname } from "next/navigation";
 
 function BasketModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const basketOpen = () => setIsOpen((prevState) => !prevState);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <div>
