@@ -25,7 +25,7 @@ export default function Header() {
       </div>
       <div>
         <Link href="/">
-          <Image alt="logo" src="/logoipsum.svg" width={250} height={250} />
+          <Image alt="logo" src="/logoipsum.svg" width={200} height={250} />
         </Link>
       </div>
       <div className="hidden sm:block sm:w-1/2">

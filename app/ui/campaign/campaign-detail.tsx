@@ -6,8 +6,8 @@ import { formatDate } from "@/app/utils/formatDate";
 export default async function CampaignDetail({ slug }: { slug: string }) {
   const data = await fetchSingleCampaign({ slug: slug });
 
-  const startDate = formatDate(data.campaign_start_date);
-  const endDate = formatDate(data.campaign_end_date);
+  const startDate = formatDate(data?.campaign_start_date);
+  const endDate = formatDate(data?.campaign_end_date);
 
   return (
     <div className="p-4 lg:px-6 max-w-screen-xl mx-auto">

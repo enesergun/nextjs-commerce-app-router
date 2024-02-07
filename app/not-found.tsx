@@ -1,11 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
+import Button from "@/app/ui/elements/button";
 
 export default function NotFound() {
   return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
+    <div className="h-[50vh] flex flex-col items-center justify-center">
+      <Image
+        src="/not-found.jpg"
+        alt="Not Found Page"
+        width={350}
+        height={200}
+      />
+      <p>Aradığınız sayfa bulunamadı</p>
+      <Link href="/">
+        <Button text="Anasayfaya Dön" />
+      </Link>
     </div>
   );
 }

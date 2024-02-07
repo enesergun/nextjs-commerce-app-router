@@ -1,6 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import Button from "@/app/ui/elements/button";
 export const metadata: Metadata = {
   title: "Sipariş Başarılı",
   description: "Siparişinizi bcaşarılı bir şekilde oluşturdunuz",
@@ -13,6 +15,9 @@ function SuccessState() {
       <h1 className="text-xl sm:text-2xl font-bold text-cyan-950 my-4 text-center">
         Siparişiniz başarılı bir şekilde oluşturulmuştur.{" "}
       </h1>
+      <Link href="/">
+        <Button text="Anasayfaya Dön" />
+      </Link>
     </div>
   );
 }
