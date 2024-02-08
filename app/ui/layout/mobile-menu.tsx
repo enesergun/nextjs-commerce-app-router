@@ -1,13 +1,14 @@
 "use client";
 import React, { useState, useEffect, FC } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { CategoryListProps } from "@/app/lib/definitions";
-
+import Search from "./search";
 const Categories: FC<CategoryListProps> = ({ data }) => {
   return (
     <div className="mt-14 flex flex-col gap-3">
+      <Search />
       {data?.map((data) => (
         <div key={data.category_id} className="text-lg	font-medium">
           <Link href={`/arama${data.category_link}`}>{data.category_name}</Link>
@@ -20,13 +21,15 @@ const Categories: FC<CategoryListProps> = ({ data }) => {
 export default function MobileMenu({ data }: Readonly<CategoryListProps>) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  let q = searchParams.get("q");
 
   const handleOpenHamburgerMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
   useEffect(() => {
     setIsOpen(false);
-  }, [pathname]);
+  }, [pathname, q]);
 
   return (
     <div className="sm:hidden">
@@ -52,6 +55,7 @@ export default function MobileMenu({ data }: Readonly<CategoryListProps>) {
         >
           <XMarkIcon className="h-4" />
         </button>
+
         <Categories data={data} />
       </div>
     </div>

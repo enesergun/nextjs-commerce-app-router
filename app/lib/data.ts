@@ -94,3 +94,16 @@ export async function fetchProductDetail(id: string) {
     throw new Error("Failed to fetch product");
   }
 }
+export async function getSearchResult(param: string | undefined) {
+  try {
+    const products = await sql<PRODUCT>`
+  SELECT id, category, name, price, image
+FROM products
+WHERE category ILIKE ${"%" + param + "%"} OR name ILIKE ${"%" + param + "%"}; 
+  `;
+    return products.rows;
+  } catch (error) {
+    console.error("Database Error", error);
+    throw new Error("Failed to fetch products by search params");
+  }
+}

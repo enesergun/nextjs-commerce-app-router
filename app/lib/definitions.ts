@@ -76,3 +76,6 @@ export interface ShippingToInfoProps {
   value: string;
   changeLink: string;
 }
+export interface SearchParamsProps {
+  searchParams?: { [key: string]: string | undefined };
+}
