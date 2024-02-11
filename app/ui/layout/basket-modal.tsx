@@ -22,7 +22,7 @@ function BasketModal() {
 
       {isOpen && (
         <div
-          className="fixed w-full h-full top-0 right-0 left-0 bottom-0 bg-black z-20 opacity-50"
+          className="fixed w-full h-full top-0 right-0 left-0 bottom-0 bg-black z-[2] opacity-50"
           onClick={() => basketOpen()}
         ></div>
       )}
