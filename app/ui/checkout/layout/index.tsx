@@ -12,8 +12,8 @@ export default function OrderSummary() {
   return (
     <aside
       className={clsx(
-        "sm:block  sm:w-2/5 sm:overflow-y-auto sm:rounded-2xl bg-white",
-        totalCount !== 0 && "bg-slate-100",
+        "sm:block  sm:w-2/5 sm:overflow-y-auto sm:rounded-2xl",
+        totalCount === 0 ? "bg-white" : "bg-slate-100",
       )}
     >
       {totalCount === 0 && <EmptyBasket />}

@@ -18,23 +18,30 @@ export default function Footer() {
           </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
             <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                About
+              <a
+                href="https://github.com/enesergun"
+                target="_blank"
+                className="hover:underline me-4 md:me-6"
+              >
+                Github
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Privacy Policy
+              <a
+                href="https://www.linkedin.com/in/enesergun/"
+                target="_blank"
+                className="hover:underline me-4 md:me-6"
+              >
+                LinkedIn
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Licensing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Contact
+              <a
+                href="https://twitter.com/eneserrgun"
+                target="_blank"
+                className="hover:underline me-4 md:me-6"
+              >
+                Twitter
               </a>
             </li>
           </ul>
