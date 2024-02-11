@@ -71,8 +71,15 @@ body {
   background: white;
   padding: 20px;
 }
+.swiper-button-next::after {
+  content: ">" !important;
+}
+.swiper-button-prev::after {
+  content: "<" !important;
+}
 .swiper-button-prev::after,
 .swiper-button-next::after {
+  
   font-size: 25px !important;
 }
 .swiper-button-prev {
