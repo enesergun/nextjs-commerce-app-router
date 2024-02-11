@@ -14,7 +14,7 @@ export async function fetchCategories() {
 export async function fetchCampaignBanners() {
   try {
     const campaigns = await sql<CAMPAING_ELEMENT>`
-    SELECT campaign_link, campaign_id, campaign_desktop_image, campaign_mobile_image
+    SELECT campaign_name, campaign_link, campaign_id, campaign_desktop_image, campaign_mobile_image
 FROM campaigns;
 `;
     return campaigns.rows;
@@ -32,13 +32,13 @@ export async function fetchProductCollections() {
     `;
 
     const tripleBigProducts = products.rows.filter(
-      (product) => product.istriplebig,
+      (product) => product.istriplebig
     );
     const tripleSmallProducts = products.rows.filter(
-      (product) => product.istriplesmall,
+      (product) => product.istriplesmall
     );
     const quadrantProducts = products.rows.filter(
-      (product) => product.isquadrant,
+      (product) => product.isquadrant
     );
 
     const result = {

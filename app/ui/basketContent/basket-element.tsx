@@ -41,12 +41,12 @@ export default function BasketElement({
           )}
         >
           <MinusIcon
-            className="h-4 w-4"
+            className="h-4 w-4 cursor-pointer"
             onClick={() => removeToCartFnc({ id }, removeFromCart)}
           />
           <span>{count}</span>
           <PlusIcon
-            className="h-4 w-4"
+            className="h-4 w-4 cursor-pointer"
             onClick={() => addToCartFnc({ id, name, price, image }, addToCart)}
           />
         </div>
@@ -54,7 +54,3 @@ export default function BasketElement({
     </div>
   );
 }
-
-/* {
-          "sm:justify-center": data.length === 0,
-        } */
