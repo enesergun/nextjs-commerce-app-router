@@ -10,11 +10,16 @@ export default function OrderSummary() {
   const [openDetail, setOpenDetail] = useState(false);
 
   return (
-    <aside className="sm:block  sm:w-2/5 sm:overflow-y-auto sm:rounded-2xl">
+    <aside
+      className={clsx(
+        "sm:block  sm:w-2/5 sm:overflow-y-auto sm:rounded-2xl bg-white",
+        totalCount !== 0 && "bg-slate-100",
+      )}
+    >
       {totalCount === 0 && <EmptyBasket />}
       <div
         className={clsx(
-          "flex bg-neutral-200 p-4 justify-between ",
+          "flex bg-slate-100 p-4 justify-between ",
           totalCount === 0 && "hidden",
         )}
       >
@@ -29,29 +34,38 @@ export default function OrderSummary() {
       </div>
       <div
         className={clsx(
-          "transition-all ease-in duration-400",
-          openDetail ? "h-[300px]" : "h-0",
+          "flex sm:block",
+          !openDetail && "max-h-0",
           totalCount === 0 && "hidden",
         )}
       >
-        <div
-          className={clsx(
-            "p-4 pt-0 transition-all duration-400 ease-in-out bg-neutral-200",
-            openDetail ? "block" : "hidden sm:block",
-          )}
-        >
-          <div className="flex flex-col gap-10 divide-y divide-neutral-400 ">
-            {cart.map((element) => (
-              <BasketElement
-                key={element.id}
-                id={element.id}
-                name={element.name}
-                price={element.price}
-                image={element.image}
-                count={element.count}
-                theme="light"
-              />
-            ))}
+        <div className="w-full">
+          <div
+            className={clsx(
+              "p-4 pt-0 transition-max-height duration-500 ease-out",
+              openDetail
+                ? "max-h-full"
+                : "opacity-0 sm:block max-h-0  sm:opacity-100",
+            )}
+          >
+            <div
+              className={clsx(
+                "flex flex-col gap-10 divide-y divide-neutral-400 ",
+                !openDetail && "hidden sm:flex",
+              )}
+            >
+              {cart.map((element) => (
+                <BasketElement
+                  key={element.id}
+                  id={element.id}
+                  name={element.name}
+                  price={element.price}
+                  image={element.image}
+                  count={element.count}
+                  theme="light"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

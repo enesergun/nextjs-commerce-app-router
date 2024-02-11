@@ -5,7 +5,7 @@ import { getExistData } from "@/app/lib/actions";
 
 async function Shipping() {
   const basketInformation = await getExistData("basket_information");
-
+  const shippingMethod = await getExistData("shipping_method");
   const data = [
     {
       id: 1,
@@ -23,7 +23,7 @@ async function Shipping() {
   return (
     <div className="p-4 lg:px-6 max-w-screen-xl mx-auto sm:w-full">
       <ShippingToInfo data={data} />
-      <ShippingMethod />
+      <ShippingMethod data={shippingMethod?.method} />
     </div>
   );
 }
