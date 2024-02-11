@@ -26,7 +26,7 @@ export default function ProductCard({
         </div>
       </Link>
       <div className="flex flex-col p-3 gap-2.5">
-        <h3 className="text-neutral-600 font-bold">{name}</h3>
+        <h1 className="text-neutral-600 font-bold">{name}</h1>
         <span> ₺ {price}</span>
 
         <button

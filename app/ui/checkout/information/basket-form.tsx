@@ -36,6 +36,7 @@ export default function BasketForm({
             name="phone"
             value={initialData?.phone}
             placeholder="Telefon Numarası"
+            ariaDescribedby="phone-error"
             inputType="tel"
             error={state?.errors?.phone}
           />
@@ -51,6 +52,7 @@ export default function BasketForm({
             name="addressType"
             value={initialData?.addressType}
             placeholder="Adres Tipi"
+            ariaDescribedby="addressType-error"
             inputType="text"
           />
           <Input

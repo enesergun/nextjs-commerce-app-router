@@ -9,7 +9,7 @@ export default function CategoryCart({ data }: { data: CATEGORY_NAMES }) {
         src={data.category_image}
         width={50}
         height={50}
-        alt={data.category_name}
+        alt={data.category_name + "Kart"}
         className="w-16 h-16 rounded-full"
       />
       <p className="text-[11px] mt-2 md:text-base line-clamp-1	">

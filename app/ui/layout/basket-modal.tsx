@@ -16,7 +16,7 @@ function BasketModal() {
 
   return (
     <div>
-      <button onClick={basketOpen}>
+      <button aria-label="open the basket modal" onClick={basketOpen}>
         <OpenBasket />
       </button>
 

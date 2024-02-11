@@ -79,7 +79,6 @@ body {
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  
   font-size: 25px !important;
 }
 .swiper-button-prev {

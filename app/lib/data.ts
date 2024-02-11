@@ -32,13 +32,13 @@ export async function fetchProductCollections() {
     `;
 
     const tripleBigProducts = products.rows.filter(
-      (product) => product.istriplebig
+      (product) => product.istriplebig,
     );
     const tripleSmallProducts = products.rows.filter(
-      (product) => product.istriplesmall
+      (product) => product.istriplesmall,
     );
     const quadrantProducts = products.rows.filter(
-      (product) => product.isquadrant
+      (product) => product.isquadrant,
     );
 
     const result = {

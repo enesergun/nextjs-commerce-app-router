@@ -15,12 +15,13 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "w-full mt-4 bg-sky-400 text-white p-3 rounded-2xl",
+        "w-full mt-4 bg-cyan-800 text-white p-3 rounded-2xl",
         disabled && "disabled:opacity-40",
       )}
       onClick={onClick}
       type={type}
       disabled={disabled}
+      aria-label="Button"
     >
       {text}
     </button>

@@ -16,6 +16,7 @@ export default function ProductContent({ data }: Readonly<ProductDetailProps>) {
           height={250}
           alt={data?.name}
           className="rounded-2xl"
+          priority
         />
       </div>
       <div className="mt-4 flex flex-col gap-3 sm:w-2/5">

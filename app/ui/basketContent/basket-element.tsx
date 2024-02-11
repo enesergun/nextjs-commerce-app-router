@@ -25,6 +25,7 @@ export default function BasketElement({
           height={75}
           alt={name}
           className="rounded-2xl h-full"
+          priority
         />
       </div>
       <div className="w-2/5">

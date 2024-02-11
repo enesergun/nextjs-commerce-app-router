@@ -26,7 +26,7 @@ function Breadcrumbs({ data }: Readonly<BreadcrumbsProps>) {
               })}
             >
               <span
-                className={clsx("text-gray-400", {
+                className={clsx("text-gray-600", {
                   underline: pathname === element.link,
                   "text-neutral-800": index <= matchedPathIndex,
                 })}
