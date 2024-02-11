@@ -17,6 +17,7 @@ import type { CAMPAING_ELEMENT } from "@/app/lib/definitions";
 import Link from "next/link";
 
 export default function CampaignBanner({ data }: { data: CAMPAING_ELEMENT[] }) {
+  console.log("data", data);
   return (
     <div className="p-4 lg:px-6 max-w-screen-xl mx-auto h-[550px]">
       <Swiper
