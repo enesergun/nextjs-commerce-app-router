@@ -39,7 +39,7 @@ export default function BasketElement({
             "flex ml-auto h-9 flex-row items-center rounded-full border border-neutral-200 w-24 justify-evenly",
             {
               "bg-neutral-50": theme === "light",
-            }
+            },
           )}
         >
           <MinusIcon
