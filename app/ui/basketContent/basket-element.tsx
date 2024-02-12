@@ -18,13 +18,14 @@ export default function BasketElement({
   const totalPricePerProduct = (parseFloat(price) * count).toFixed(2);
   return (
     <div className="flex justify-between pt-5">
-      <div className="h-[75px]">
+      <div className="h-[75px] w-[75px]">
         <Image
           src={image}
+          alt={name}
           width={75}
           height={75}
-          alt={name}
-          className="rounded-2xl h-full"
+          className="rounded-2xl h-full w-full object-contain"
+          sizes="100vw"
           priority
         />
       </div>
@@ -38,7 +39,7 @@ export default function BasketElement({
             "flex ml-auto h-9 flex-row items-center rounded-full border border-neutral-200 w-24 justify-evenly",
             {
               "bg-neutral-50": theme === "light",
-            },
+            }
           )}
         >
           <MinusIcon

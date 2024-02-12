@@ -25,7 +25,8 @@ export default function ProductCart({
           width={611}
           height={type === "big" ? 800 : 440}
           alt={altText}
-          className="w-full h-full rounded-2xl"
+          className="w-full h-full rounded-2xl object-cover"
+          sizes="100vw"
         />
         <div className="absolute">
           <div className="relative bottom-20 left-7 rounded-full bg-stone-300 p-3 text-sm">
